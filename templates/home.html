@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+      <title>Welcome to Spring Boot Chat Application</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  </head>
+  <body>
+
+
+    <div id="username-page">
+        <div class="username-page-container">
+            <h1 class="title">Enter your username</h1>
+            <div id="usernameForm" name="usernameForm">
+                <div class="form-group">
+                    <input type="text" id="username" placeholder="Username" autocomplete="off" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <select id="selector" onchange="selectItem()">
+                        <option>Student </option>
+                        <option>Instructor</option>
+                    </select>
+                </div>
+
+                <div id="instructor_control">
+                    <div class="form-group">
+                        <input type="text" id="data" placeholder="instructor_control" autocomplete="off" class="form-control" />
+                    </div>
+
+                </div>
+
+                <div id="student_control">
+                    <div class="form-group">
+                        <input type="text" id="username_01" placeholder="instrucor_name" autocomplete="off" class="form-control" />
+                    </div>
+
+                </div>
+                <div id="error_happen" class="form-group">
+                    Some Error Happening !
+                </div>
+
+                <div class="form-group">
+                    <button id="send_username"  class="accent username-submit">Start Chatting</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chat-page" class="hidden">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2 id="question"></h2>
+            </div>
+            <ul id="messageArea">
+
+            </ul>
+            <div >
+                <div id="bottom_form">
+
+                        <input type="text" id="private_message" placeholder="Type a message..." autocomplete="off" class="form-control"/>
+                        <button type="" id="user_send_click" class="primary">Send</button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>
