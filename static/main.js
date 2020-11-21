@@ -29,12 +29,13 @@ var colors = [
 user_form.classList.remove('hidden');
 instructor_form.classList.add('hidden');
 
-var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
-//var socket = io.connect('http://127.0.0.1:5000');
-var private_socket = io(location.protocol + '//' + document.domain + ':' + location.port+'/private');
+
 
 
 $(document).ready(function() {
+var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+//var socket = io.connect('http://127.0.0.1:5000');
+var private_socket = io(location.protocol + '//' + document.domain + ':' + location.port+'/private');
 
     $('#send_username').on('click', function() {
         if (student){
