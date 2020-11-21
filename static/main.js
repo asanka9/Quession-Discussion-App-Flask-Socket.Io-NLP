@@ -46,10 +46,10 @@ $(document).ready(function() {
             user_name = $('#username').val();
             message = $('#data').val();
             user_name_val = user_name
-
             private_socket.emit('instructname', {'username':user_name,'message':message});
         }
     });
+
     private_socket.on('error_private_message', function(msg) {
         alert(msg);
         if(msg=='00'){
@@ -62,10 +62,12 @@ $(document).ready(function() {
             $("#error_happen").text('<li>'+msg.n+'</li>');
         }
     });
+
     $('#user_send_click').on('click', function() {
         $("#messageArea").append('<li>'+$('#private_message').val()+'</li>');
         private_socket.emit('private_user_message', {'username':instructor_name_val,'message':$('#private_message').val(),'me':user_name_val});
     });
+
     $('#instructor_send_click').on('click', function() {
         //private_socket.emit('private_instructor_message', {'username':user_name,'sender':'instructor':instructor_name});
     });
@@ -85,7 +87,7 @@ $(document).ready(function() {
 
 });
 
-
+//Drop Down Button
 function selectItem(){
     var selectorr_id = document.querySelector('#selector');
     var selected_text = selectorr_id.value;
@@ -103,6 +105,7 @@ function selectItem(){
 }
 
 
+//This is For Instructor Reply Area
 function ReplyButton(id){
     var temp_array = id.split("_");
     reciever = $('#sender_'+temp_array[1]).text();
