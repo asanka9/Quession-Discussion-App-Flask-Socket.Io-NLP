@@ -29,9 +29,9 @@ var colors = [
 user_form.classList.remove('hidden');
 instructor_form.classList.add('hidden');
 
-var host = "http://"+window.location.hostname+":5000";
-var socket = io.connect(host);
-var private_socket = io(host+'/private');
+
+var socket = io.connect('https://nlpdep.herokuapp.com:5000');
+var private_socket = io('https://nlpdep.herokuapp.com:5000/private');
 
 
 $(document).ready(function() {
