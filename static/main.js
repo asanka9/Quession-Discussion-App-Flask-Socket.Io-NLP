@@ -30,8 +30,8 @@ user_form.classList.remove('hidden');
 instructor_form.classList.add('hidden');
 
 
-var socket = io.connect('https://nlpdep.herokuapp.com:5000');
-var private_socket = io('https://nlpdep.herokuapp.com:5000/private');
+var socket = io.connect('https://nlpqwe231ddep.herokuapp.com:5000');
+var private_socket = io('https://nlpqwe231ddep.herokuapp.com:5000/private');
 
 
 $(document).ready(function() {
