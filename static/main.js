@@ -29,8 +29,9 @@ var colors = [
 user_form.classList.remove('hidden');
 instructor_form.classList.add('hidden');
 
-var socket = io.connect('http://127.0.0.1:5000');
-var private_socket = io('http://127.0.0.1:5000/private');
+var host = "http://"+window.location.hostname+":5000";
+var socket = io.connect(host);
+var private_socket = io(host+'/private');
 
 
 $(document).ready(function() {
